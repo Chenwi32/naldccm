@@ -22,7 +22,7 @@ const Footer = () => {
      const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
 
   return (
-    <Container maxW={"unset"} bg={"brand.500"} color="brand.300" mt={10}>
+    <Container maxW={"unset"} p={0} bg={"brand.500"} color="brand.300" mt={10}>
       <Container maxW={1200} p={5}>
         <Flex
           justifyContent={"space-between"}
@@ -101,7 +101,7 @@ const Footer = () => {
             </Flex>
           </Box>
         </Flex>
-        <Text mt={10} textAlign="center">
+        <Text mt={10} >
           <small>
             &#x00A9; NALDCCAM<sup>&#x00AE;</sup> 2023 | All Rights Reserved
           </small>
