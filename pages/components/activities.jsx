@@ -1,9 +1,12 @@
-import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Image, Text, useMediaQuery } from "@chakra-ui/react";
 
 const Activities = () => {
+
+const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
+
   return (
-    <Container maxW={1200} mt={10}>
-      <Flex gap={5}>
+    <Container maxW={1200} mt={10} p={1}>
+      <Flex gap={5} flexDirection={isLargerThan700? 'row' : 'column'}>
         <Box>
           <Image
             src="/images/ntuhsencampain.jpg"

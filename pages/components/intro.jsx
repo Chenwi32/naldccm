@@ -1,8 +1,10 @@
-import { Container, Heading, Text } from "@chakra-ui/react";
+import { Container, Heading, Text} from "@chakra-ui/react";
 
 const Intro = () => {
+  
+
   return (
-    <Container maxW={900} mt={10} textAlign={"center"}>
+    <Container p={1} maxW={900} mt={10} textAlign={"center"}>
       <Heading fontFamily={"Roboto"} fontSize="1.3rem" color="brand.500">
         NTUHSEN AGRICULTURAL AND LIVESTOCK DEVELOPMENT CORPORATION CAMEROON
         (NALDCCAM)

@@ -5,18 +5,18 @@ import {
   Image,
   ListItem,
   UnorderedList,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 const Services = () => {
+
+  const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
+
     return (
-      <Container bg={"brand.101"} maxW={"unset"} w="100%">
-        <Container maxW={1200} mt={10} p={10}>
-          <Flex gap={10}>
-            <Image
-              src="/images/ntuhsenservices.png"
-              w={"60%"}
-              alt="Services"
-            />
+      <Container bg={"brand.101"} maxW={"unset"} w="100%" p={0}>
+        <Container maxW={1200} mt={10} p={isLargerThan700? 10 : 1}>
+          <Flex gap={10} flexDirection={isLargerThan700 ? "row" : "column"}>
+            <Image src="/images/ntuhsenservices.png" w={isLargerThan700? "60%" : '100%'} alt="Services" />
 
             <Box fontFamily={"Roboto"} letterSpacing={1}>
               <UnorderedList>

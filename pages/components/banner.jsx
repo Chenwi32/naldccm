@@ -7,15 +7,19 @@ import {
   Heading,
   IconButton,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 const Banner = () => {
+
+  const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
+
   return (
     <Container
       maxW={"unset"}
       h={"100%"}
       w="100%"
-      p={10}
+      p={isLargerThan700 ? 10 : "2rem 1rem"}
       background={
         "linear-gradient(90deg, rgba(255,255,255,0.9589023109243697) 0%, rgba(255,255,255,0.8776698179271709) 52%, rgba(255,255,255,0.12977065826330536) 100%);"
       }
@@ -24,10 +28,10 @@ const Banner = () => {
         display="flex"
         alignItems={"flex-start"}
         justifyContent="flex-start"
-        w="100%"
         maxW={1200}
+        p={0}
       >
-        <Box w={"60%"}>
+        <Box w={isLargerThan700 ? "60%" : "100%"}>
           <Heading color={"brand.500"} fontFamily={"Andika"}>
             Our Vision
           </Heading>
@@ -44,8 +48,8 @@ const Banner = () => {
           </Text>
 
           <Flex
-            w={"80%"}
-            p={"1rem 1.5rem"}
+            w={isLargerThan700? "80%" : '100%'}
+            p={isLargerThan700 ? "1rem 1.5rem" : 2}
             borderRadius="lg"
             mt={10}
             alignItems={"center"}
