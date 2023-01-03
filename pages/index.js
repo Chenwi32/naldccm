@@ -1,4 +1,4 @@
-import { Container, Heading } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import Head from "next/head";
 import Activities from "./components/activities";
 import Intro from "./components/intro";

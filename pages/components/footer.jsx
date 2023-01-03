@@ -85,7 +85,7 @@ const Footer = () => {
         </Flex>
         <Text mt={10} textAlign="center">
           <small>
-            &#x00A9; NALDCCAM<sup>&#x00AE;</sup> 2023 | All Rights Reserved
+             &#x00A9; NALDCCAM<sup>&#x00AE;</sup> 2023 | All Rights Reserved
           </small>
         </Text>
       </Container>
