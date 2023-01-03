@@ -13,9 +13,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
   faFacebookF,
-  faWhatsapp,
   faInstagram,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+
 
 const Footer = () => {
 
@@ -33,33 +34,53 @@ const Footer = () => {
               Social
             </Heading>
             <Flex gap={5} mt={3}>
-              <Icon
-                fontSize={"1.5rem"}
-                transition="0.3s ease-in-out"
-                _hover={{
-                  transform: "translateY(-0.3rem)",
-                }}
+              <a
+                href="https://www.facebook.com/profile.php?id=100063924069677&mibextid=ZbWKwL"
+                target="_blank"
+                rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faFacebookF} />
-              </Icon>
-              <Icon
-                fontSize={"1.5rem"}
-                transition="0.3s ease-in-out"
-                _hover={{
-                  transform: "translateY(-0.3rem)",
-                }}
+                <Icon
+                  fontSize={"1.5rem"}
+                  transition="0.3s ease-in-out"
+                  _hover={{
+                    transform: "translateY(-0.3rem)",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </Icon>
+              </a>
+
+              <a
+                href="https://www.instagram.com/naldccam/"
+                target="_blank"
+                rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faInstagram} />
-              </Icon>
-              <Icon
-                fontSize={"1.5rem"}
-                transition="0.3s ease-in-out"
-                _hover={{
-                  transform: "translateY(-0.3rem)",
-                }}
+                <Icon
+                  fontSize={"1.5rem"}
+                  transition="0.3s ease-in-out"
+                  _hover={{
+                    transform: "translateY(-0.3rem)",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </Icon>
+              </a>
+
+              <a
+                href="https://youtube.com/@naldccam"
+                target="_blank"
+                rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faWhatsapp} />
-              </Icon>
+                <Icon
+                  fontSize={"1.5rem"}
+                  transition="0.3s ease-in-out"
+                  _hover={{
+                    transform: "translateY(-0.3rem)",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faYoutube} />
+                </Icon>
+              </a>
             </Flex>
           </Box>
 
@@ -90,18 +111,18 @@ const Footer = () => {
               About
             </Heading>
             <Flex flexDirection={"column"} mt={3}>
-              <VStack  alignItems="flex-start">
+              <VStack alignItems="flex-start">
                 <Text>Address:</Text>
                 <small>Nsimeyong III, Damas Yaoundé, Cameroon</small>
               </VStack>
-              <VStack  mt={3} alignItems="flex-start">
+              <VStack mt={3} alignItems="flex-start">
                 <Text>Registration Number:</Text>
                 <small>RC/YAE/2019/B/1157</small>
               </VStack>
             </Flex>
           </Box>
         </Flex>
-        <Text mt={10} >
+        <Text mt={10}>
           <small>
             &#x00A9; NALDCCAM<sup>&#x00AE;</sup> 2023 | All Rights Reserved
           </small>

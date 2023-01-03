@@ -1,6 +1,7 @@
 import { Container } from "@chakra-ui/react";
 import Head from "next/head";
 import Activities from "./components/activities";
+import Header from "./components/header";
 import Intro from "./components/intro";
 import Services from "./components/services";
 
@@ -15,6 +16,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header/>
 
       <Container maxW={'unset'} w='100%' m={0} p={0}>
         <Intro />

@@ -47,14 +47,15 @@ const Navigation = () => {
             />
             <MenuList boxShadow="lg">
               <MenuItem border="0" bg="inherit">
-                About
+                <Link href={'/about'}>
+                  About
+                </Link>
+                
               </MenuItem>
 
               <MenuItem border="0" bg="inherit">
+
                 Our Services
-              </MenuItem>
-              <MenuItem border="0" bg="inherit">
-                Open File...
               </MenuItem>
             </MenuList>
           </Flex>

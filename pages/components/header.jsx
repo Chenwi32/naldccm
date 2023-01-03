@@ -1,6 +1,5 @@
 import { Box, Container } from "@chakra-ui/react";
 import Banner from "./banner";
-import Navigation from "./navigation";
 
 const Header = () => {
   return (
@@ -15,7 +14,6 @@ const Header = () => {
       backgroundBlendMode={"hard-light"}
       p={0}
     >
-      <Navigation />
 
       <Banner/>
     </Container>
