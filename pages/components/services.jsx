@@ -2,6 +2,7 @@ import {
   Box,
   Container,
   Flex,
+  Heading,
   Image,
   ListItem,
   UnorderedList,
@@ -14,12 +15,20 @@ const Services = () => {
 
     return (
       <Container bg={"brand.101"} maxW={"unset"} w="100%" p={0}>
-        <Container maxW={1200} mt={10} p={isLargerThan700? 10 : 1}>
+        <Container maxW={1200} mt={10} p={isLargerThan700 ? 10 : 1}>
           <Flex gap={10} flexDirection={isLargerThan700 ? "row" : "column"}>
-            <Image src="/images/ntuhsenservices.png" w={isLargerThan700? "60%" : '100%'} alt="Services" />
+            <Image
+              src="/images/ntuhsenservices.png"
+              w={isLargerThan700 ? "60%" : "100%"}
+              alt="Services"
+            />
 
             <Box fontFamily={"Roboto"} letterSpacing={1}>
-              <UnorderedList>
+              <Heading color={"brand.500"} fontFamily={"Andika"}>
+                Our Services
+              </Heading>
+
+              <UnorderedList mt={10}>
                 <ListItem>
                   Establishing leading agriculture farms and production centers
                   according to customer’s requirements and market demands;

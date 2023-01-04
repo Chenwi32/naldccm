@@ -6,7 +6,7 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
 
   return (
     <Container maxW={1200} mt={10} p={1}>
-      <Flex gap={5} flexDirection={isLargerThan700? 'row' : 'column'}>
+      <Flex gap={5} flexDirection={isLargerThan700 ? "row" : "column"}>
         <Box>
           <Image
             src="/images/ntuhsencampain.jpg"
@@ -15,8 +15,11 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
             alt="training session"
           />
 
-          <Text mt={5} textAlign={"center"} fontFamily={"Sofia"}>
-            NALDCCAM Training Session
+          <Text mt={5} textAlign={"center"} fontFamily={"Roboto"}>
+            <small>
+               NALDCCAM Training Session
+            </small>
+           
           </Text>
         </Box>
         <Box>
@@ -27,8 +30,11 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
             alt="Yarm farm"
           />
 
-          <Text mt={5} textAlign={"center"} fontFamily={"Sofia"}>
-            One of NALDCCAM's Yarm Farms At Kumfutu
+          <Text mt={5} textAlign={"center"} fontFamily={"Roboto"}>
+            <small>
+              One of NALDCCAM's Yarm Farms At Kumfutu
+            </small>
+            
           </Text>
         </Box>
         <Box>
@@ -39,8 +45,11 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
             alt="Community activities"
           />
 
-          <Text mt={5} textAlign={"center"} fontFamily={"Sofia"}>
-            NALDCCAM Community Activities
+          <Text mt={5} textAlign={"center"} fontFamily={"Roboto"}>
+            <small>
+               NALDCCAM Community Activities
+            </small>
+           
           </Text>
         </Box>
       </Flex>

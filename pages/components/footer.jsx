@@ -16,11 +16,10 @@ import {
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-
+import Link from "next/link";
 
 const Footer = () => {
-
-     const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
+  const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
 
   return (
     <Container maxW={"unset"} p={0} bg={"brand.500"} color="brand.300" mt={10}>
@@ -31,7 +30,7 @@ const Footer = () => {
         >
           <Box>
             <Heading fontSize={"1.3rem"} fontFamily={"Adika"} color="brand.400">
-              Social
+              Follow us on
             </Heading>
             <Flex gap={5} mt={3}>
               <a
@@ -122,11 +121,37 @@ const Footer = () => {
             </Flex>
           </Box>
         </Flex>
-        <Text mt={10}>
-          <small>
-            &#x00A9; NALDCCAM<sup>&#x00AE;</sup> 2023 | All Rights Reserved
-          </small>
-        </Text>
+      </Container>
+
+      <Container bg="brand.300" color={"brand.500"} maxW={"unset"}>
+        <Flex
+          m={"auto"}
+          mt={10}
+          maxW={1200}
+          p={2}
+          justifyContent={"space-between"}
+          flexDirection={isLargerThan700? 'row' : 'column'}
+        >
+          <Text>
+            <small>
+              &#x00A9; NALDCCAM<sup>&#x00AE;</sup> 2023 | All Right Reserved
+            </small>
+          </Text>
+
+          <Flex gap={5}>
+            <Link href={""}>
+              <Text textDecoration={"underline"}>
+                <small>Terms of use</small>
+              </Text>
+            </Link>
+
+            <Link href={""}>
+              <Text textDecoration={"underline"}>
+                <small>Privacy Policy</small>
+              </Text>
+            </Link>
+          </Flex>
+        </Flex>
       </Container>
     </Container>
   );
