@@ -15,14 +15,11 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
             alt="training session"
           />
 
-          <Text mt={5} textAlign={"center"} fontFamily={"Roboto"}>
-            <small>
-               NALDCCAM Training Session
-            </small>
-           
+          <Text mt={3} textAlign={"center"} fontFamily={"Roboto"}>
+            <small>NALDCCAM Training Session</small>
           </Text>
         </Box>
-        <Box>
+        <Box mt={isLargerThan700 ? 0 : 5}>
           <Image
             src="/images/ntuhsenfarm.png"
             h={250}
@@ -30,14 +27,11 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
             alt="Yarm farm"
           />
 
-          <Text mt={5} textAlign={"center"} fontFamily={"Roboto"}>
-            <small>
-              One of NALDCCAM's Yarm Farms At Kumfutu
-            </small>
-            
+          <Text mt={3} textAlign={"center"} fontFamily={"Roboto"}>
+            <small>One of NALDCCAM's Yarm Farms At Kumfutu</small>
           </Text>
         </Box>
-        <Box>
+        <Box mt={isLargerThan700 ? 0 : 5}>
           <Image
             src="/images/ntuhsencomunact.jpg"
             h={250}
@@ -45,11 +39,8 @@ const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
             alt="Community activities"
           />
 
-          <Text mt={5} textAlign={"center"} fontFamily={"Roboto"}>
-            <small>
-               NALDCCAM Community Activities
-            </small>
-           
+          <Text mt={3} textAlign={"center"} fontFamily={"Roboto"}>
+            <small>NALDCCAM Community Activities</small>
           </Text>
         </Box>
       </Flex>

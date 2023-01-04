@@ -51,9 +51,13 @@ const Navigation = () => {
                   About
                 </MenuItem>
               </Link>
-              <MenuItem border="0" bg="inherit">
-                Our Services
+
+              <Link href={'/projects'}>
+                <MenuItem border="0" bg="inherit">
+                Our Projects
               </MenuItem>
+              </Link>
+              
             </MenuList>
           </Flex>
         </Menu>
