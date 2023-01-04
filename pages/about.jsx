@@ -14,7 +14,7 @@ const About = () => {
         ></Image>
 
         <Box textAlign={"center"}>
-          <Heading color="brand.500" fontFamily={"Adika"} mt={10}>
+          <Heading color="brand.500" fontFamily={"Andika"} mt={10}>
             Who We Are
           </Heading>
 
@@ -36,7 +36,7 @@ const About = () => {
         </Box>
 
         <Box mt={20}>
-          <Heading fontSize={"1.5rem"} fontFamily="Adika" color={"brand.500"}>
+          <Heading fontSize={"1.5rem"} fontFamily="Andika" color={"brand.500"}>
             Our Story
           </Heading>
 
@@ -47,7 +47,7 @@ const About = () => {
             prices, accessing market outlets, technical know-how and finance.
           </Text>
 
-          <Text fontFamily={"Adika"} fontWeight={600} mt={2}>
+          <Text fontFamily={"Andika"} fontWeight={600} mt={2}>
             As a common initiative group, it operated with some specific
             objectives as follow:
           </Text>
@@ -83,7 +83,7 @@ const About = () => {
         </Box>
 
         <Box mt={10}>
-          <Heading fontSize={"1.5rem"} fontFamily="Adika" color={"brand.500"}>
+          <Heading fontSize={"1.5rem"} fontFamily="Andika" color={"brand.500"}>
             Our Vision
           </Heading>
 
@@ -105,7 +105,7 @@ const About = () => {
         </Box>
 
         <Box mt={10}>
-          <Heading fontSize={"1.5rem"} fontFamily="Adika" color={"brand.500"}>
+          <Heading fontSize={"1.5rem"} fontFamily="Andika" color={"brand.500"}>
             Our Mission
           </Heading>
 
@@ -129,7 +129,7 @@ const About = () => {
         </Box>
 
         <Box textAlign={"center"}>
-          <Heading color="brand.500" fontFamily={"Adika"} mt={10}>
+          <Heading color="brand.500" fontFamily={"Andika"} mt={10}>
             Our Core Values
           </Heading>
           <Text fontFamily={"Roboto"} mt={5}>
@@ -140,7 +140,7 @@ const About = () => {
         </Box>
 
         <Box mt={10}>
-          <Heading fontSize={"1.5rem"} fontFamily="Adika" color={"brand.500"}>
+          <Heading fontSize={"1.5rem"} fontFamily="Andika" color={"brand.500"}>
             Our Objectives
           </Heading>
         </Box>

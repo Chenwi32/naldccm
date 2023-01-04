@@ -30,7 +30,7 @@ const Footer = () => {
           flexDirection={isLargerThan700 ? "row" : "column"}
         >
           <Box>
-            <Heading fontSize={"1.3rem"} fontFamily={"Adika"} color="brand.102">
+            <Heading fontSize={"1.3rem"} fontFamily={"Andika"} color="brand.102">
               Follow us on
             </Heading>
             <Flex gap={5} mt={3}>
@@ -89,7 +89,7 @@ const Footer = () => {
               mt={isLargerThan700 ? 0 : 10}
               color="brand.102"
               fontSize={"1.3rem"}
-              fontFamily={"Adika"}
+              fontFamily={"Andika"}
             >
               Contact
             </Heading>
@@ -106,7 +106,7 @@ const Footer = () => {
               mt={isLargerThan700 ? 0 : 10}
               color="brand.102"
               fontSize={"1.3rem"}
-              fontFamily={"Adika"}
+              fontFamily={"Andika"}
             >
               About
             </Heading>
