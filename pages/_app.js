@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
       brand: {
         100: "#51bd87",
         101: "#51bd8710",
+        102: "#44FF99",
         200: "#1A2BFA",
         300: "#f7fff8",
         301: "#f7fff8fa",

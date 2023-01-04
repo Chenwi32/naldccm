@@ -17,7 +17,7 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <Container p={0} maxW={"unset"} bg="brand.300">
-      <Container p={'0 0.5rem'} maxW={1200}>
+      <Container p={"0 0.5rem"} maxW={1200}>
         <Menu>
           <Flex
             p={"0.5rem 0"}
@@ -46,15 +46,12 @@ const Navigation = () => {
               fontSize={"2rem"}
             />
             <MenuList boxShadow="lg">
-              <MenuItem border="0" bg="inherit">
-                <Link href={'/about'}>
+              <Link href={"/about"}>
+                <MenuItem border="0" bg="inherit">
                   About
-                </Link>
-                
-              </MenuItem>
-
+                </MenuItem>
+              </Link>
               <MenuItem border="0" bg="inherit">
-
                 Our Services
               </MenuItem>
             </MenuList>

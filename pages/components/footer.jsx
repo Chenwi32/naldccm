@@ -17,6 +17,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import { PhoneIcon } from "@chakra-ui/icons";
 
 const Footer = () => {
   const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
@@ -29,7 +30,7 @@ const Footer = () => {
           flexDirection={isLargerThan700 ? "row" : "column"}
         >
           <Box>
-            <Heading fontSize={"1.3rem"} fontFamily={"Adika"} color="brand.400">
+            <Heading fontSize={"1.3rem"} fontFamily={"Adika"} color="brand.102">
               Follow us on
             </Heading>
             <Flex gap={5} mt={3}>
@@ -86,24 +87,24 @@ const Footer = () => {
           <Box>
             <Heading
               mt={isLargerThan700 ? 0 : 10}
-              color="brand.400"
+              color="brand.102"
               fontSize={"1.3rem"}
               fontFamily={"Adika"}
             >
               Contact
             </Heading>
             <Flex flexDirection={"column"} mt={3}>
-              <VStack alignItems="flex-start">
-                <Text>Call:</Text>
+              <HStack alignItems="flex-start">
+                 <Icon mr={2}><PhoneIcon/></Icon>
                 <Text>+237 670 850 414 / +237 653 955 513</Text>
-              </VStack>
+              </HStack>
             </Flex>
           </Box>
 
           <Box>
             <Heading
               mt={isLargerThan700 ? 0 : 10}
-              color="brand.400"
+              color="brand.102"
               fontSize={"1.3rem"}
               fontFamily={"Adika"}
             >
@@ -138,7 +139,7 @@ const Footer = () => {
             </small>
           </Text>
 
-          <Flex gap={5}>
+          <Flex gap={5} color='brand.100'>
             <Link href={""}>
               <Text textDecoration={"underline"}>
                 <small>Terms of use</small>
