@@ -139,6 +139,44 @@ const About = () => {
           </Text>
         </Box>
 
+        <Container
+          maxW={600}
+          mt={10}
+          mb={"8rem"}
+          position={"relative"}
+          display="flex"
+          justifyContent={"center"}
+        >
+          <Image
+            width={400}
+            h={400}
+            src="/images/ntuhsenceo.jpeg"
+            borderTopRightRadius={isLargerThan700 ? "10rem" : "8rem"}
+            borderBottomRightRadius={isLargerThan700 ? "10rem" : "8rem"}
+          />
+
+          <Box
+            position={"absolute"}
+            top={"20rem"}
+            right={isLargerThan700 ? "8rem" : "3rem"}
+            bg="brand.100"
+            color={"brand.300"}
+            fontSize="0.9rem"
+            textAlign={"center"}
+            p={isLargerThan700 ? "1rem 3rem" : "1rem"}
+            borderRadius={"3rem"}
+            width={isLargerThan700 ? "70%" : "80%"}
+          >
+            <Text fontFamily={"Andika"} fontWeight={600}>
+              Lidel Kelly Toh
+            </Text>
+            <Text fontFamily={"Roboto"}>
+              <small>Cheif Executive Officer (CEO)</small> <br />
+              <small>During a field inspection</small>
+            </Text>
+          </Box>
+        </Container>
+
         <Box mt={10}>
           <Heading fontSize={"1.5rem"} fontFamily="Andika" color={"brand.500"}>
             Our Objectives
