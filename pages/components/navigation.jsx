@@ -9,12 +9,34 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
+import { useAuth } from "./authprovider";
+import { useEffect } from "react";
 
 const Navigation = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { user } = useAuth();
+
+  const checkUser = () => {
+    
+      if (!user.uid) {
+        onOpen();
+      }
+    
+  };
+
   return (
     <Container p={0} maxW={"unset"} bg="brand.300">
       <Container p={"0 0.5rem"} maxW={1200}>
@@ -52,16 +74,59 @@ const Navigation = () => {
                 </MenuItem>
               </Link>
 
-              <Link href={'/projects'}>
+              <Link href={"/projects"}>
                 <MenuItem border="0" bg="inherit">
-                Our Projects
-              </MenuItem>
+                  Our Projects
+                </MenuItem>
               </Link>
-              
+
+              <MenuItem border="0" bg="inherit" onClick={checkUser}>
+                <Button
+                  bg={""}
+                  _hover={{
+                    bg: "",
+                  }}
+                >
+                  Dashboard
+                </Button>
+              </MenuItem>
             </MenuList>
           </Flex>
         </Menu>
       </Container>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody>You are not logged in as an admin</ModalBody>
+
+          <ModalFooter display={"flex"} justifyContent="space-between">
+            <Button
+              _hover={{
+                bg: "",
+              }}
+              bg={"brand.500"}
+              color="brand.300"
+              mr={3}
+              onClick={onClose}
+            >
+              Go back
+            </Button>
+            <Link href={"/login"}>
+              <Button
+                bg={"brand.100"}
+                color="brand.300"
+                _hover={{
+                  bg: "",
+                }}
+              >
+                Log In
+              </Button>
+            </Link>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 };

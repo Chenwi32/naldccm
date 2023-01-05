@@ -1,10 +1,9 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import '../styles/globals.css'
-import Layout from './components/layout'
-
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import "../styles/globals.css";
+import { AuthContextProvider } from "./components/authprovider";
+import Layout from "./components/layout";
 
 function MyApp({ Component, pageProps }) {
-
   const theme = extendTheme({
     colors: {
       brand: {
@@ -23,18 +22,14 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <ChakraProvider theme={theme}>
-      
-
-     
-      <Layout>
-      <Component {...pageProps} />
+    <AuthContextProvider>
+      <ChakraProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
         </Layout>
-      
-    </ChakraProvider>
-    
-    
-  )
+      </ChakraProvider>
+    </AuthContextProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
