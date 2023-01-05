@@ -11,6 +11,7 @@ const About = () => {
           w={"100%"}
           h={isLargerThan700 ? 450 : 250}
           borderRadius="lg"
+          alt="Ntuhsen Community activities"
         ></Image>
 
         <Box textAlign={"center"}>
@@ -101,6 +102,7 @@ const About = () => {
             h={isLargerThan700 ? 450 : 250}
             borderRadius="lg"
             mt={5}
+            alt='Ntuhsen campaign'
           ></Image>
         </Box>
 
@@ -153,6 +155,7 @@ const About = () => {
             src="/images/ntuhsenceo.jpeg"
             borderTopRightRadius={isLargerThan700 ? "10rem" : "8rem"}
             borderBottomRightRadius={isLargerThan700 ? "10rem" : "8rem"}
+            alt='Ntuhsen CEO'
           />
 
           <Box

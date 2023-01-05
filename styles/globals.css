@@ -27,7 +27,17 @@ a {
 }
 
 
-.test{
-  color: #f7fff8;
-  color: #51bd8736;
+.main_input {
+  font-family: "Roboto", sans-serif;
+  padding: 0.5em;
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--links);
+  border-radius: 5px;
+
+
+}
+
+.main_input:focus {
+  border: 2px solid var(--primary);
 }

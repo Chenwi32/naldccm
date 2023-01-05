@@ -1,10 +1,6 @@
 import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
 
-const data = [
-  {
 
-  }
-]
 
 const Projects = () => {
   return (

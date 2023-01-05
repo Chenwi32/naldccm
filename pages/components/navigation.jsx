@@ -22,7 +22,7 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { useAuth } from "./authprovider";
-import { useEffect } from "react";
+
 
 const Navigation = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -80,15 +80,17 @@ const Navigation = () => {
                 </MenuItem>
               </Link>
 
-              <MenuItem border="0" bg="inherit" onClick={checkUser}>
-                <Button
+              <MenuItem border="0" bg="inherit">
+                <Text
+                  p={0}
                   bg={""}
                   _hover={{
                     bg: "",
                   }}
+                  onClick={checkUser}
                 >
                   Dashboard
-                </Button>
+                </Text>
               </MenuItem>
             </MenuList>
           </Flex>
@@ -120,6 +122,7 @@ const Navigation = () => {
                 _hover={{
                   bg: "",
                 }}
+                onClick={onClose}
               >
                 Log In
               </Button>
