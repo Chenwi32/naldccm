@@ -1,4 +1,10 @@
-import { Container, Heading } from "@chakra-ui/react";
+import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+
+const data = [
+  {
+
+  }
+]
 
 const Projects = () => {
   return (
@@ -6,6 +12,10 @@ const Projects = () => {
       <Heading fontFamily={"Andika"} color="brand.500">
         This is the project page
       </Heading>
+
+      <SimpleGrid>
+        
+      </SimpleGrid>
     </Container>
   );
 };

@@ -157,8 +157,8 @@ const About = () => {
 
           <Box
             position={"absolute"}
-            top={"20rem"}
-            right={isLargerThan700 ? "8rem" : "3rem"}
+            top={isLargerThan700? "20rem" : '22rem'}
+            right={isLargerThan700 ? "8rem" : "4rem"}
             bg="brand.100"
             color={"brand.300"}
             fontSize="0.9rem"
