@@ -17,6 +17,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Protectlogin from "./components/protectlogin";
 
 const LogIn = () => {
   const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
@@ -46,12 +47,13 @@ const LogIn = () => {
   };
 
   return (
-    <Container
+    <Protectlogin>
+       <Container
       maxW={"unset"}
       minH="80vh"
       h="fit-content"
       w="100%"
-      bg={"brand.500"}
+      bg={"brand.400"}
       mb={10}
       borderBottomLeftRadius={isLargerThan700 ? "10rem" : "5rem"}
       p={5}
@@ -151,7 +153,7 @@ const LogIn = () => {
                 bg="brand.100"
                 color="brand.300"
                 _hover={{
-                  bg: "brand.400",
+                  bg: "brand.500",
                 }}
                 p={5}
                 mb={10}
@@ -165,6 +167,8 @@ const LogIn = () => {
         </FormProvider>
       </Flex>
     </Container>
+    </Protectlogin>
+   
   );
 };
 
