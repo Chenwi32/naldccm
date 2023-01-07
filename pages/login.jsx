@@ -15,7 +15,7 @@ import { useAuth } from "./components/authprovider";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 const LogIn = () => {
@@ -39,7 +39,7 @@ const LogIn = () => {
   const onSubmit = async (data) => {
     try {
       await logIn(data.email, data.password);
-      router.push("/nationalIdCollection");
+      router.push("/admindashboard");
     } catch (error) {
       setErrorMessage(error.message);
     }

@@ -22,9 +22,12 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { useAuth } from "./authprovider";
+import { useRouter } from "next/router";
 
 
 const Navigation = () => {
+const router = useRouter();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { user } = useAuth();
@@ -33,6 +36,8 @@ const Navigation = () => {
     
       if (!user.uid) {
         onOpen();
+      } else {
+        router.push("/admindashboard");
       }
     
   };
