@@ -5,6 +5,13 @@ import {
   Text,
   VStack,
   HStack,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useAuth } from "./components/authprovider";
 import ProtectedRoute from "./components/protectedroute";
@@ -16,6 +23,7 @@ import { addDoc, doc, getFirestore, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const Admindashboard = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { user, logOut } = useAuth();
 
   const [projectTitle, setProjectTitle] = useState("");
@@ -74,7 +82,7 @@ const Admindashboard = () => {
               p={5}
               mb={10}
               type="submit"
-              onClick={logOut}
+              onClick={onOpen}
             >
               Log Out
             </Button>
@@ -166,6 +174,47 @@ const Admindashboard = () => {
             </HStack>
           </Container>
         </Container>
+
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalCloseButton />
+            <ModalBody
+              minH={200}
+              display="flex"
+              justifyContent={"center"}
+              alignItems="center"
+            >
+              <Text>Are you sure you want to log out?</Text>
+            </ModalBody>
+
+            <ModalFooter display={"flex"} justifyContent="space-between">
+              <Button
+                _hover={{
+                  bg: "",
+                }}
+                bg={"brand.500"}
+                color="brand.300"
+                mr={3}
+                onClick={onClose}
+              >
+                Cancel
+              </Button>
+              
+                <Button
+                  bg={"red"}
+                  color="brand.300"
+                  _hover={{
+                    bg: "",
+                  }}
+                  onClick={logOut}
+                >
+                  Continue
+                </Button>
+            
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </>
     </ProtectedRoute>
   );
