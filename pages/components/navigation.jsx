@@ -24,22 +24,19 @@ import Link from "next/link";
 import { useAuth } from "./authprovider";
 import { useRouter } from "next/router";
 
-
 const Navigation = () => {
-const router = useRouter();
+  const router = useRouter();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { user } = useAuth();
 
   const checkUser = () => {
-    
-      if (!user.uid) {
-        onOpen();
-      } else {
-        router.push("/admindashboard");
-      }
-    
+    if (!user.uid) {
+      onOpen();
+    } else {
+      router.push("/admindashboard");
+    }
   };
 
   return (
@@ -106,7 +103,14 @@ const router = useRouter();
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <ModalBody>You are not logged in as an admin</ModalBody>
+          <ModalBody
+            minH={200}
+            display="flex"
+            justifyContent={"center"}
+            alignItems="center"
+          >
+            <Text>You are not logged in as an admin</Text>
+          </ModalBody>
 
           <ModalFooter display={"flex"} justifyContent="space-between">
             <Button

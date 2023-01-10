@@ -30,7 +30,11 @@ const Footer = () => {
           flexDirection={isLargerThan700 ? "row" : "column"}
         >
           <Box>
-            <Heading fontSize={"1.3rem"} fontFamily={"Andika"} color="brand.102">
+            <Heading
+              fontSize={"1.3rem"}
+              fontFamily={"Andika"}
+              color="brand.102"
+            >
               Follow us on
             </Heading>
             <Flex gap={5} mt={3}>
@@ -95,7 +99,9 @@ const Footer = () => {
             </Heading>
             <Flex flexDirection={"column"} mt={3}>
               <HStack alignItems="flex-start">
-                 <Icon mr={2}><PhoneIcon/></Icon>
+                <Icon mr={2}>
+                  <PhoneIcon />
+                </Icon>
                 <Text>+237 670 850 414 / +237 653 955 513</Text>
               </HStack>
             </Flex>
@@ -111,14 +117,14 @@ const Footer = () => {
               About
             </Heading>
             <Flex flexDirection={"column"} mt={3}>
-              <VStack alignItems="flex-start">
-                <Text>Address:</Text>
+              <HStack alignItems="center">
+                <Text fontWeight={"600"}>Address:</Text>
                 <small>Nsimeyong III, Damas Yaoundé, Cameroon</small>
-              </VStack>
-              <VStack mt={3} alignItems="flex-start">
-                <Text>Registration Number:</Text>
+              </HStack>
+              <HStack mt={3} alignItems="center">
+                <Text fontWeight={"600"}>Registration Number:</Text>
                 <small>RC/YAE/2019/B/1157</small>
-              </VStack>
+              </HStack>
             </Flex>
           </Box>
         </Flex>
@@ -131,7 +137,7 @@ const Footer = () => {
           maxW={1200}
           p={2}
           justifyContent={"space-between"}
-          flexDirection={isLargerThan700? 'row' : 'column'}
+          flexDirection={isLargerThan700 ? "row" : "column"}
         >
           <Text>
             <small>
@@ -139,7 +145,7 @@ const Footer = () => {
             </small>
           </Text>
 
-          <Flex gap={5} color='brand.100'>
+          <Flex gap={5} color="brand.100">
             <Link href={""}>
               <Text textDecoration={"underline"}>
                 <small>Terms of use</small>
