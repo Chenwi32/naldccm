@@ -23,6 +23,7 @@ const Admindashboard = () => {
   const [projectBody, setProjectBody] = useState("");
   const [iscompleted, setIscompleted] = useState(false);
   const [projectId, setProjectId] = useState(0);
+  const time = Date.now();
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -34,7 +35,8 @@ const Admindashboard = () => {
       projectTitle,
       projectHeadline,
       projectBody,
-      iscompleted
+      iscompleted,
+      projectId
     };
 
     if (projectTitle !== "" && projectHeadline !== "" && projectBody !== "") {
@@ -48,6 +50,7 @@ const Admindashboard = () => {
       setProjectHeadline("");
       setProjectTitle("");
       setIscompleted(false);
+      setProjectId(0)
     } else {
       alert("You forgot some fields");
     }
@@ -131,6 +134,7 @@ const Admindashboard = () => {
                 rows="5"
                 onChange={(e) => {
                   setProjectBody(e.target.value);
+                  setProjectId(time);
                 }}
               ></textarea>
             </VStack>
@@ -143,8 +147,6 @@ const Admindashboard = () => {
                 type="checkbox"
                 onChange={(e) => {
                   setIscompleted(e.target.checked);
-
-                  
                 }}
               ></input>
             </HStack>

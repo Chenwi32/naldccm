@@ -7,11 +7,9 @@ import {
   HStack,
   Image,
   SimpleGrid,
-  SkeletonCircle,
   SkeletonText,
   Text,
   useMediaQuery,
-  VStack,
 } from "@chakra-ui/react";
 
 import { collection, getDocs, query } from "firebase/firestore";
@@ -54,7 +52,7 @@ const Projects = () => {
   const loading = projects.length === 0;
 
   return (
-    <Container p={isLargerThan700? 0 : 5} maxW={1200} mt={10} mb={10}>
+    <Container p={isLargerThan700 ? 0 : 5} maxW={1200} mt={10} mb={10}>
       <Heading fontFamily={"Andika"} color="brand.500" mt={10} mb={5}>
         Our Projects
       </Heading>
@@ -63,7 +61,6 @@ const Projects = () => {
         {loading ? (
           <>
             <Box padding="6" boxShadow="lg" bg="white">
-              <SkeletonCircle size="10" />
               <SkeletonText
                 mt="4"
                 noOfLines={4}
@@ -73,7 +70,6 @@ const Projects = () => {
             </Box>
 
             <Box padding="6" boxShadow="lg" bg="white">
-              <SkeletonCircle size="10" />
               <SkeletonText
                 mt="4"
                 noOfLines={4}
@@ -83,7 +79,6 @@ const Projects = () => {
             </Box>
 
             <Box padding="6" boxShadow="lg" bg="white">
-              <SkeletonCircle size="10" />
               <SkeletonText
                 mt="4"
                 noOfLines={4}
@@ -96,7 +91,7 @@ const Projects = () => {
           projects.map((project) => {
             return (
               <Flex
-                key={project.projectTitle}
+                key={project.projectId}
                 p={5}
                 boxShadow={"lg"}
                 border={"1px solid"}
@@ -105,37 +100,39 @@ const Projects = () => {
                 alignItems={"center"}
                 textAlign="center"
               >
-                
-                  <Heading mb={5} fontSize={"1.5rem"} color={"brand.500"}>
-                    {project.projectTitle}
-                  </Heading>
+                <Heading mb={5} fontSize={"1.5rem"} color={"brand.500"}>
+                  {project.projectTitle}
+                </Heading>
 
-                  <Heading  fontSize={"1rem"} color={"brand.600"}>
-                    {project.projectHeadline}
-                  </Heading>
+                <Heading fontSize={"1rem"} color={"brand.600"}>
+                  {project.projectHeadline}
+                </Heading>
 
-                  <Text
-                    mt={5}
-                    fontFamily={"Roboto"}
-                    fontWeight={600}
-                    color={"brand.600"}
-                  >
-                    {project.projectBody}
-                  </Text>
+                <Text mt={5} fontFamily={"Roboto"} color={"brand.600"}>
+                  {project.projectBody}
+                </Text>
 
-                  <Button
-                    mt={5}
-                    bg={"brand.100"}
-                    color={"brand.300"}
-                    _hover={{
-                      bg: "brand.500",
-                      color: "brand.300",
-                    }}
-                    boxShadow={"lg"}
-                  >
-                    Learn more about this project
-                  </Button>
-                
+                <HStack mt={5}>
+                  <Text fontWeight={600}>Status:</Text>
+                  {project.iscompleted === false ? (
+                    <Text color={"orange"}>In Progress</Text>
+                  ) : (
+                    <Text color={"brand.100"}>Copleted</Text>
+                  )}
+                </HStack>
+
+                <Button
+                  mt={5}
+                  bg={"brand.100"}
+                  color={"brand.300"}
+                  _hover={{
+                    bg: "brand.500",
+                    color: "brand.300",
+                  }}
+                  boxShadow={"lg"}
+                >
+                  Learn more about this project
+                </Button>
               </Flex>
             );
           })
