@@ -1,16 +1,145 @@
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  SimpleGrid,
+  SkeletonCircle,
+  SkeletonText,
+  Text,
+  useMediaQuery,
+  VStack,
+} from "@chakra-ui/react";
 
+import { collection, getDocs, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
+import { db } from "../firebase";
 
 const Projects = () => {
+  const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
+
+  const projectCollection = collection(db, "projects");
+
+  const [projects, setProjects] = useState([]);
+
+  const getProjects = async () => {
+    // Query all Id cards
+    const projectQuery = query(projectCollection);
+
+    // get id cards
+    const querySnapshot = await getDocs(projectQuery);
+
+    // Map through the ids and add them to a new array
+    const results = [];
+
+    querySnapshot.forEach((snapshot) => {
+      results.push(snapshot.data());
+    });
+
+    // assign the new array to the foundIds
+    setProjects(results);
+  };
+
+  // Get the  when message changes onclick
+  // of the button below
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
+  const loading = projects.length === 0;
+
   return (
-    <Container minH={"70vh"} maxW={1200} mt={10}>
-      <Heading fontFamily={"Andika"} color="brand.500">
-        This is the project page
+    <Container p={0} maxW={1200} mt={10} mb={10}>
+      <Heading fontFamily={"Andika"} color="brand.500" mt={10} mb={5}>
+        Our Projects
       </Heading>
 
-      <SimpleGrid>
-        
+      <SimpleGrid columns={isLargerThan700 ? 2 : 1} gap={5} columnGap={5}>
+        {loading ? (
+          <>
+            <Box padding="6" boxShadow="lg" bg="white">
+              <SkeletonCircle size="10" />
+              <SkeletonText
+                mt="4"
+                noOfLines={4}
+                spacing="4"
+                skeletonHeight="2"
+              />
+            </Box>
+
+            <Box padding="6" boxShadow="lg" bg="white">
+              <SkeletonCircle size="10" />
+              <SkeletonText
+                mt="4"
+                noOfLines={4}
+                spacing="4"
+                skeletonHeight="2"
+              />
+            </Box>
+
+            <Box padding="6" boxShadow="lg" bg="white">
+              <SkeletonCircle size="10" />
+              <SkeletonText
+                mt="4"
+                noOfLines={4}
+                spacing="4"
+                skeletonHeight="2"
+              />
+            </Box>
+          </>
+        ) : (
+          projects.map((project) => {
+            return (
+              <Flex
+                key={project.projectTitle}
+                p={5}
+                boxShadow={"lg"}
+                border={"1px solid"}
+                borderRadius="lg"
+                flexDirection={"column"}
+                alignItems={"center"}
+                textAlign="center"
+              >
+                
+                  <Heading mb={5} fontSize={"1.5rem"} color={"brand.500"}>
+                    {project.projectTitle}
+                  </Heading>
+
+                  <Heading  fontSize={"1rem"} color={"brand.600"}>
+                    {project.projectHeadline}
+                  </Heading>
+
+                  <Text
+                    mt={5}
+                    fontFamily={"Roboto"}
+                    fontWeight={600}
+                    color={"brand.600"}
+                  >
+                    {project.projectBody}
+                  </Text>
+
+                  <Button
+                    mt={5}
+                    bg={"brand.100"}
+                    color={"brand.300"}
+                    _hover={{
+                      bg: "brand.500",
+                      color: "brand.300",
+                    }}
+                    boxShadow={"lg"}
+                  >
+                    Learn more about this project
+                  </Button>
+                
+              </Flex>
+            );
+          })
+        )}
       </SimpleGrid>
     </Container>
   );
