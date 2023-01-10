@@ -54,7 +54,7 @@ const Projects = () => {
   const loading = projects.length === 0;
 
   return (
-    <Container p={0} maxW={1200} mt={10} mb={10}>
+    <Container p={isLargerThan700? 0 : 5} maxW={1200} mt={10} mb={10}>
       <Heading fontFamily={"Andika"} color="brand.500" mt={10} mb={5}>
         Our Projects
       </Heading>

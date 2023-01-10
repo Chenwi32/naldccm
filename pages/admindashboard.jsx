@@ -22,6 +22,7 @@ const Admindashboard = () => {
   const [projectHeadline, setProjectHeadline] = useState("");
   const [projectBody, setProjectBody] = useState("");
   const [iscompleted, setIscompleted] = useState(false);
+  const [projectId, setProjectId] = useState(0);
 
   const handlePost = async (e) => {
     e.preventDefault();
