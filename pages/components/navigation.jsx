@@ -49,9 +49,7 @@ const Navigation = () => {
             alignItems="center"
           >
             <Link href="/">
-              <Heading fontSize={"1.5rem"} color="brand.100">
-                NALDCCAM
-              </Heading>
+              <Image w={150} src="/images/naldccamlogo.png"/>
             </Link>
 
             <MenuButton

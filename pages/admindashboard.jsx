@@ -52,10 +52,6 @@ const Admindashboard = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(iscompleted);
-  }, [iscompleted]);
-
   return (
     <ProtectedRoute>
       <>
